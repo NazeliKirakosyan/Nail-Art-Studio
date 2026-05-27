@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hy">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nail Art Studio</title>
 
-  <!-- Google Fonts -->
+  <!-- =========================
+       GOOGLE FONTS
+  ========================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+
     /* =========================
        GLOBAL STYLES
     ========================== */
@@ -20,15 +23,15 @@
       box-sizing:border-box;
     }
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       font-family:'Poppins',sans-serif;
       background:#fff9fb;
-      color:#333;
-      line-height:1.6;
-    }
-
-    html{
-      scroll-behavior:smooth;
+      color:#222;
+      line-height:1.7;
     }
 
     .container{
@@ -41,6 +44,11 @@
       padding:90px 0;
     }
 
+    img{
+      max-width:100%;
+      display:block;
+    }
+
     h1,h2,h3{
       line-height:1.2;
     }
@@ -51,60 +59,19 @@
 
     .btn{
       display:inline-block;
-      padding:14px 32px;
+      padding:15px 34px;
       background:#ff4f87;
       color:#fff;
       text-decoration:none;
-      border-radius:40px;
+      border-radius:50px;
       font-weight:600;
       transition:0.3s ease;
-      box-shadow:0 8px 20px rgba(255,79,135,0.25);
+      box-shadow:0 10px 25px rgba(255,79,135,0.3);
     }
 
     .btn:hover{
-      background:#e83e73;
-      transform:translateY(-3px);
-    }
-
-    /* =========================
-       HEADER / HERO SECTION
-    ========================== */
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      background:
-      linear-gradient(
-        rgba(255,255,255,0.75),
-        rgba(255,255,255,0.75)
-      ),
-      url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1400&q=80');
-      background-size:cover;
-      background-position:center;
-    }
-
-    .hero-content{
-      max-width:650px;
-    }
-
-    .hero h1{
-      font-size:4rem;
-      font-weight:700;
-      color:#222;
-      margin-bottom:20px;
-    }
-
-    .hero p{
-      font-size:1.1rem;
-      margin-bottom:35px;
-      color:#555;
-    }
-
-    /* =========================
-       ABOUT SECTION
-    ========================== */
-    .about{
-      background:#ffffff;
+      background:#e63c72;
+      transform:translateY(-4px);
     }
 
     .section-title{
@@ -114,11 +81,112 @@
 
     .section-title h2{
       font-size:2.5rem;
-      color:#222;
       margin-bottom:15px;
+      color:#222;
     }
 
-    .about-content{
+    .section-title p{
+      max-width:700px;
+      margin:auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+    header{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:1000;
+      background:rgba(255,255,255,0.95);
+      backdrop-filter:blur(10px);
+      box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .navbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 0;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:1.2rem;
+      font-weight:700;
+      color:#222;
+    }
+
+    .logo img{
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:25px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#444;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#ff4f87;
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================== */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      background:
+      linear-gradient(
+        rgba(255,255,255,0.72),
+        rgba(255,255,255,0.72)
+      ),
+      url('https://cdn.shopify.com/s/files/1/0816/3232/9987/files/235634497_552036485987551_4128624547688309809_n.jpg?v=1779909620');
+
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      padding-top:100px;
+    }
+
+    .hero-content{
+      max-width:700px;
+    }
+
+    .hero h1{
+      font-size:4rem;
+      margin-bottom:20px;
+      color:#111;
+    }
+
+    .hero p{
+      font-size:1.1rem;
+      margin-bottom:35px;
+      color:#444;
+    }
+
+    /* =========================
+       ABOUT SECTION
+    ========================== */
+    .about{
+      background:#fff;
+    }
+
+    .about-grid{
       display:grid;
       grid-template-columns:repeat(2,1fr);
       gap:50px;
@@ -126,9 +194,8 @@
     }
 
     .about-image img{
-      width:100%;
-      border-radius:20px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.1);
+      border-radius:25px;
+      box-shadow:0 15px 35px rgba(0,0,0,0.12);
     }
 
     .about-text h3{
@@ -138,56 +205,89 @@
     }
 
     /* =========================
-       FEATURES SECTION
+       SERVICES SECTION
     ========================== */
-    .features{
+    .services{
       background:#fff2f7;
     }
 
-    .feature-grid{
+    .services-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
       gap:30px;
     }
 
-    .feature-card{
+    .service-card{
       background:#fff;
       padding:35px;
-      border-radius:20px;
+      border-radius:22px;
       text-align:center;
       transition:0.3s ease;
       box-shadow:0 10px 25px rgba(0,0,0,0.06);
     }
 
-    .feature-card:hover{
+    .service-card:hover{
       transform:translateY(-8px);
-      box-shadow:0 15px 35px rgba(0,0,0,0.1);
+      box-shadow:0 18px 35px rgba(0,0,0,0.12);
     }
 
-    .feature-icon{
-      font-size:40px;
+    .service-icon{
+      font-size:42px;
       margin-bottom:20px;
     }
 
-    .feature-card h3{
-      margin-bottom:15px;
+    .service-card h3{
+      margin-bottom:12px;
       color:#222;
+    }
+
+    /* =========================
+       PROMOTION SECTION
+    ========================== */
+    .promo{
+      background:#fff;
+    }
+
+    .promo-box{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:40px;
+      align-items:center;
+      background:linear-gradient(135deg,#ff4f87,#ff7ba5);
+      padding:50px;
+      border-radius:30px;
+      color:#fff;
+      overflow:hidden;
+      box-shadow:0 20px 40px rgba(255,79,135,0.25);
+    }
+
+    .promo-image img{
+      border-radius:20px;
+    }
+
+    .promo-content h2{
+      font-size:2.5rem;
+      margin-bottom:25px;
+    }
+
+    .promo-content p{
+      color:#fff;
+      margin-bottom:12px;
     }
 
     /* =========================
        CONTACT SECTION
     ========================== */
     .contact{
-      background:#ffffff;
+      background:#fff2f7;
     }
 
     .contact-box{
-      background:linear-gradient(135deg,#ff4f87,#ff7da7);
-      color:#fff;
+      background:#fff;
       padding:60px;
       border-radius:30px;
       text-align:center;
-      box-shadow:0 15px 40px rgba(255,79,135,0.25);
+      box-shadow:0 15px 35px rgba(0,0,0,0.08);
     }
 
     .contact-box h2{
@@ -195,21 +295,23 @@
       margin-bottom:20px;
     }
 
-    .contact-box p{
-      color:#ffeaf1;
-      margin-bottom:30px;
-    }
-
     .contact-info{
+      margin-top:35px;
       display:flex;
       justify-content:center;
-      gap:40px;
       flex-wrap:wrap;
-      margin-top:25px;
+      gap:25px;
     }
 
     .contact-item{
+      background:#fff2f7;
+      padding:15px 22px;
+      border-radius:15px;
       font-weight:500;
+    }
+
+    .social-btn{
+      margin-top:30px;
     }
 
     /* =========================
@@ -220,7 +322,6 @@
       color:#bbb;
       text-align:center;
       padding:25px 10px;
-      font-size:0.95rem;
     }
 
     /* =========================
@@ -229,26 +330,35 @@
     @media(max-width:900px){
 
       .hero h1{
-        font-size:3rem;
+        font-size:2.8rem;
       }
 
-      .about-content{
+      .about-grid,
+      .promo-box{
         grid-template-columns:1fr;
       }
 
-      .about-image{
-        order:-1;
+      .promo-box{
+        padding:35px;
+      }
+
+      .nav-links{
+        display:none;
       }
     }
 
     @media(max-width:600px){
+
+      section{
+        padding:70px 0;
+      }
 
       .hero{
         text-align:center;
       }
 
       .hero h1{
-        font-size:2.3rem;
+        font-size:2.2rem;
       }
 
       .section-title h2{
@@ -256,165 +366,281 @@
       }
 
       .contact-box{
-        padding:40px 25px;
+        padding:35px 20px;
       }
 
-      .contact-box h2{
+      .promo-content h2{
         font-size:2rem;
       }
     }
+
   </style>
 </head>
+
 <body>
+
+  <!-- =========================
+       HEADER / NAVBAR
+  ========================== -->
+  <header>
+    <div class="container navbar">
+
+      <!-- Logo -->
+      <div class="logo">
+        <img src="https://cdn.shopify.com/s/files/1/0816/3232/9987/files/235634497_552036485987551_4128624547688309809_n.jpg?v=1779909620" alt="Logo">
+        Nail Art Studio
+      </div>
+
+      <!-- Navigation -->
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#promo">Promotion</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+    </div>
+  </header>
 
   <!-- =========================
        HERO SECTION
   ========================== -->
   <section class="hero">
+
     <div class="container">
+
       <div class="hero-content">
-        <h1>Luxury Nail Art That Speaks Your Style</h1>
+
+        <h1>
+          Beautiful Nails.<br>
+          Luxury Beauty Experience.
+        </h1>
+
         <p>
-          Elevate your beauty with elegant nail designs, premium care,
-          and a relaxing studio experience crafted just for you.
+          Professional nail art studio offering premium manicure,
+          pedicure, brows, lashes, hair styling and modern beauty care
+          in Yerevan.
         </p>
 
-        <!-- Call To Action Button -->
+        <!-- CTA Button -->
         <a href="#contact" class="btn">Book Appointment</a>
+
       </div>
+
     </div>
+
   </section>
 
   <!-- =========================
        ABOUT SECTION
   ========================== -->
-  <section class="about">
+  <section class="about" id="about">
+
     <div class="container">
 
       <div class="section-title">
-        <h2>About Our Studio</h2>
+        <h2>Մեր Մասին | About Us</h2>
+
         <p>
-          We combine creativity, beauty, and precision to deliver
-          unforgettable nail art experiences.
+          Nail Art Studio-ն ժամանակակից գեղեցկության սրահ է,
+          որտեղ պրոֆեսիոնալիզմը միախառնվում է գեղեցկության և հարմարավետության հետ։
         </p>
       </div>
 
-      <div class="about-content">
+      <div class="about-grid">
 
         <!-- About Text -->
         <div class="about-text">
-          <h3>Modern Beauty Meets Artistic Perfection</h3>
+
+          <h3>Modern Beauty Studio</h3>
+
           <p>
-            At Nail Art Studio, we specialize in trendy nail designs,
-            premium manicure treatments, and personalized beauty care.
-            Our talented artists use high-quality products to ensure
-            elegance, comfort, and long-lasting results.
+            Մենք առաջարկում ենք բարձրակարգ ծառայություններ՝
+            մատնահարդարում, ոտնահարդարում, հոնքերի և թարթիչների խնամք,
+            մազերի հարդարում և Elos ծառայություններ։
           </p>
 
           <br>
 
           <p>
-            Whether you love minimalist aesthetics or bold artistic
-            styles, our studio is designed to bring your beauty vision
-            to life in a luxurious and relaxing environment.
+            Our salon combines modern aesthetics, стерile tools,
+            professional artists and premium products to create
+            the perfect beauty experience.
           </p>
+
         </div>
 
         <!-- About Image -->
         <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80" alt="Nail Art">
+          <img src="https://cdn.shopify.com/s/files/1/0816/3232/9987/files/235634497_552036485987551_4128624547688309809_n.jpg?v=1779909620" alt="Nail Studio">
         </div>
 
       </div>
+
     </div>
+
   </section>
 
   <!-- =========================
-       FEATURES SECTION
+       SERVICES SECTION
   ========================== -->
-  <section class="features">
+  <section class="services" id="services">
+
     <div class="container">
 
       <div class="section-title">
-        <h2>Why Choose Us</h2>
+        <h2>Ծառայություններ | Services</h2>
+
         <p>
-          Experience professional care with modern designs and premium service.
+          Professional beauty services designed for elegance,
+          confidence and comfort.
         </p>
       </div>
 
-      <div class="feature-grid">
+      <div class="services-grid">
 
-        <!-- Feature Card -->
-        <div class="feature-card">
-          <div class="feature-icon">💅</div>
-          <h3>Creative Nail Art</h3>
-          <p>
-            Unique and stylish nail designs customized to match your personality.
-          </p>
+        <!-- Service -->
+        <div class="service-card">
+          <div class="service-icon">💅</div>
+          <h3>Մատնահարդարում</h3>
+          <p>Modern manicure & gel polish services.</p>
         </div>
 
-        <!-- Feature Card -->
-        <div class="feature-card">
-          <div class="feature-icon">✨</div>
-          <h3>Premium Products</h3>
-          <p>
-            We use top-quality products for healthy, beautiful, and lasting nails.
-          </p>
+        <!-- Service -->
+        <div class="service-card">
+          <div class="service-icon">✨</div>
+          <h3>Ոտնահարդարում</h3>
+          <p>Luxury pedicure with long lasting results.</p>
         </div>
 
-        <!-- Feature Card -->
-        <div class="feature-card">
-          <div class="feature-icon">🌸</div>
-          <h3>Relaxing Atmosphere</h3>
-          <p>
-            Enjoy a calm and luxurious studio environment while we pamper you.
-          </p>
+        <!-- Service -->
+        <div class="service-card">
+          <div class="service-icon">👁</div>
+          <h3>Հոնքերի հարդարում</h3>
+          <p>Perfect brows with professional styling.</p>
         </div>
 
-        <!-- Feature Card -->
-        <div class="feature-card">
-          <div class="feature-icon">🕒</div>
-          <h3>Easy Booking</h3>
-          <p>
-            Quick appointments and friendly service designed around your schedule.
-          </p>
+        <!-- Service -->
+        <div class="service-card">
+          <div class="service-icon">🌸</div>
+          <h3>Թարթիչների լիցք</h3>
+          <p>Elegant lash styling for a beautiful look.</p>
+        </div>
+
+        <!-- Service -->
+        <div class="service-card">
+          <div class="service-icon">💇‍♀️</div>
+          <h3>Մազերի հարդարում</h3>
+          <p>Modern hairstyles for every occasion.</p>
+        </div>
+
+        <!-- Service -->
+        <div class="service-card">
+          <div class="service-icon">💖</div>
+          <h3>Elos & Lamination</h3>
+          <p>Advanced beauty care treatments.</p>
         </div>
 
       </div>
+
     </div>
+
+  </section>
+
+  <!-- =========================
+       PROMOTION SECTION
+  ========================== -->
+  <section class="promo" id="promo">
+
+    <div class="container">
+
+      <div class="promo-box">
+
+        <!-- Promotion Image -->
+        <div class="promo-image">
+          <img src="https://cdn.shopify.com/s/files/1/0816/3232/9987/files/photo_5240000400981695097_y.jpg?v=1779910100" alt="Promotion">
+        </div>
+
+        <!-- Promotion Content -->
+        <div class="promo-content">
+
+          <h2>🔥 1+1 Promotion 🔥</h2>
+
+          <p><strong>9000֏ միասին | Together only 9000֏</strong></p>
+
+          <p>⏰ Շտապեք — places are limited!</p>
+
+          <p>🔺 Մատնահարդարում և գելլաք</p>
+          <p>🔺 Ոտնամատերի հարդարում և գելլաք</p>
+          <p>🔺 2 մասնագետ միաժամանակ</p>
+          <p>🔺 300+ գելլաքի երանգներ</p>
+          <p>✂️ Sterile tools</p>
+
+          <br>
+
+          <a href="https://wa.me/37491911199" class="btn">
+            Book Now
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </section>
 
   <!-- =========================
        CONTACT SECTION
   ========================== -->
   <section class="contact" id="contact">
+
     <div class="container">
 
       <div class="contact-box">
-        <h2>Ready For Stunning Nails?</h2>
+
+        <h2>Contact Us</h2>
 
         <p>
-          Book your appointment today and let our artists create the perfect look for you.
+          Visit our beauty studio or contact us directly
+          for appointments and consultations.
         </p>
 
-        <a href="#" class="btn">Get Started</a>
-
-        <!-- Contact Info -->
+        <!-- Contact Information -->
         <div class="contact-info">
-          <div class="contact-item">📍 Beauty Street, New York</div>
-          <div class="contact-item">📞 +1 (234) 567-890</div>
-          <div class="contact-item">✉ hello@nailstudio.com</div>
+
+          <div class="contact-item">
+            📍 Կիևյան 2-րդ նրբանցք 6
+          </div>
+
+          <div class="contact-item">
+            📞 +374 91 911199
+          </div>
+
+          <div class="contact-item">
+            ✨ SHANT TV-ի հարևանությամբ
+          </div>
+
+        </div>
+
+        <!-- Instagram Button -->
+        <div class="social-btn">
+          <a href="https://www.instagram.com/nailartstudio_____/" class="btn">
+            Instagram Page
+          </a>
         </div>
 
       </div>
+
     </div>
+
   </section>
 
   <!-- =========================
        FOOTER
   ========================== -->
   <footer>
-    © 2026 Nail Art Studio. All Rights Reserved.
+    © 2026 Nail Art Studio — All Rights Reserved
   </footer>
 
 </body>
